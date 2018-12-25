@@ -22,3 +22,16 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMYTRACK_MODIFICATIONS = False
+
+    # For mailing
+    MAIL_SERVER = 'smtp.googlemail.com'  # default
+    MAIL_PORT = 587
+    MAIL_USE_TLS = 1
+    MAIL_USE_SSL = 0  # default
+    # MAIL_DEBUG = app.debug  # default
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    MAIL_DEFAULT_SENDER = None  # default
+    MAIL_MAX_EMAILS = None  # default
+    # MAIL_SUPPRESS_SEND = app.testing   # default
+    MAIL_ASCII_ATTACHMENTS = False  # default
